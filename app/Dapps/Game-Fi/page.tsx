@@ -2,6 +2,7 @@
 import Navbar from "@/components/Navbar";
 import React from "react";
 import NavforDapps from "@/components/NavforDapps";
+import SwipeNavigator from "@/components/SwipeNavigator";
 interface TokenCardProps {
   name: string;
   symbol: string;
@@ -87,68 +88,70 @@ const TokenCard: React.FC<TokenCardProps> = ({
 
 const page = () => {
   return (
-    <Layout>
-      <div className="px-4 py-2 space-y-4">
-        <div className="bg-[#4848487A] rounded-xl p-4 flex justify-between items-center ">
-          <div className="flex items-center ">
-            <img
-              src="/Wiggletoearn.svg"
-              alt="DApp Icon"
-              className="w-12 h-12 rounded-full mr-4"
-            />
-            <div>
-              <h2 className="text-lg font-bold">Wiggletoearn</h2>
-              <p className="text-sm text-gray-200 font-extralight">
-                Lorem ipsum dolor sit amet, consec..{" "}
-              </p>
+    <SwipeNavigator currentPage="game-fi">
+      <Layout>
+        <div className="px-4 py-2 space-y-4">
+          <div className="bg-[#4848487A] rounded-xl p-4 flex justify-between items-center ">
+            <div className="flex items-center ">
+              <img
+                src="/Wiggletoearn.svg"
+                alt="DApp Icon"
+                className="w-12 h-12 rounded-full mr-4"
+              />
+              <div>
+                <h2 className="text-lg font-bold">Wiggletoearn</h2>
+                <p className="text-sm text-gray-200 font-extralight">
+                  Lorem ipsum dolor sit amet, consec..{" "}
+                </p>
+              </div>
             </div>
+            <img src="/arrow.svg" alt="" />
+
+            <button className="text-red-500">
+              <i className="fas fa-chevron-right"></i>
+            </button>
           </div>
-          <img src="/arrow.svg" alt="" />
-
-          <button className="text-red-500">
-            <i className="fas fa-chevron-right"></i>
-          </button>
         </div>
-      </div>
 
-      {/* Pagination Dots */}
-      <div className="flex justify-center mt-4">
-        <span className="h-2 w-2 bg-red-500 rounded-full mx-1"></span>
-        <span className="h-2 w-2 bg-gray-400 rounded-full mx-1"></span>
-        <span className="h-2 w-2 bg-gray-400 rounded-full mx-1"></span>
-      </div>
+        {/* Pagination Dots */}
+        <div className="flex justify-center mt-4">
+          <span className="h-2 w-2 bg-red-500 rounded-full mx-1"></span>
+          <span className="h-2 w-2 bg-gray-400 rounded-full mx-1"></span>
+          <span className="h-2 w-2 bg-gray-400 rounded-full mx-1"></span>
+        </div>
 
-      <div className="min-h-screen text-white p-4">
-        <h3 className="text-lg font-semibold mb-4">Top DApp tokens</h3>
+        <div className="min-h-screen text-white p-4">
+          <h3 className="text-lg font-semibold mb-4">Top DApp tokens</h3>
 
-        <TokenCard
-          name="Bitcoin"
-          symbol="BTC"
-          price="$61,052.45"
-          change="+0.60%"
-          iconSrc="/btc.svg"
-          changePositive={true}
-        />
+          <TokenCard
+            name="Bitcoin"
+            symbol="BTC"
+            price="$61,052.45"
+            change="+0.60%"
+            iconSrc="/btc.svg"
+            changePositive={true}
+          />
 
-        <TokenCard
-          name="Ethereum"
-          symbol="ETH"
-          price="$2,614.57"
-          change="+0.58%"
-          iconSrc="/eth.svg"
-          changePositive={true}
-        />
+          <TokenCard
+            name="Ethereum"
+            symbol="ETH"
+            price="$2,614.57"
+            change="+0.58%"
+            iconSrc="/eth.svg"
+            changePositive={true}
+          />
 
-        <TokenCard
-          name="Aptos"
-          symbol="APT"
-          price="$6.27"
-          change="+9.74%"
-          iconSrc="/aptos.svg"
-          changePositive={true}
-        />
-      </div>
-    </Layout>
+          <TokenCard
+            name="Aptos"
+            symbol="APT"
+            price="$6.27"
+            change="+9.74%"
+            iconSrc="/aptos.svg"
+            changePositive={true}
+          />
+        </div>
+      </Layout>
+    </SwipeNavigator>
   );
 };
 
